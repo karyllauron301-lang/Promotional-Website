@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapitan City | Official Employee Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MSU-Style Top Utility Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <a href="#">Tourist Portal</a> | 
+            <a href="#login">Business Portal</a> | 
+            <a href="#login">Employee Portal</a> | 
+            <a href="#contact">Contact Us</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-main">
+            <div class="logo-section">
+                <div class="logo-text">
+                    <h1>CITY GOVERNMENT OF DAPITAN</h1>
+                    <p>Province of Zamboanga del Norte, Philippines</p>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#attractions">Transparency</a></li>
+                <li><a href="#attractions">Tourism</a></li>
+                <li><a href="#attractions">Services</a></li>
+                <li><a href="#contact">Offices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Read More -->
+    <section id="home" class="hero-split">
+        <div class="hero-image-container">
+            <img src="images (99).jpg" alt="Sunset Boulevard">
+        </div>
+        <div class="hero-text-card">
+            <h2>Historic Sunset Boulevard</h2>
+            <p>The City of Dapitan is pleased to invite travelers and families to explore the 1st Heritage Walk. Experience the shores where Dr. Jose Rizal began his exile, offering a platform for sharing cultural knowledge.</p>
+            <a href="#attractions" class="read-more-btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Full 10-Item Gallery Section -->
+    <section id="attractions" class="container">
+        <h2 class="section-title">Must-Visit Destinations</h2>
+        <p class="click-hint">Click any photo to see the description</p>
+        <div class="gallery-grid">
+            <div class="card" onclick="openModal('City Hall', 'The heart of Dapitan governance.', 'images (1).jpg')">
+                <img src="images (1).jpg"><h3>City Hall</h3>
+            </div>
+            <div class="card" onclick="openModal('St. James Parish', 'A historic landmark of faith.', 'images (2).jpg')">
+                <img src="images (2).jpg"><h3>St. James Parish</h3>
+            </div>
+            <div class="card" onclick="openModal('Sunset Boulevard', 'A premier coastal road with a stunning view.', 'images (99).jpg')">
+                <img src="images (99).jpg"><h3>Sunset Boulevard</h3>
+            </div>
+            <div class="card" onclick="openModal('Dakak Resort', 'World-class diving and white sand beaches.', 'images (90).jpg')">
+                <img src="images (90).jpg"><h3>Dakak Beach Resort</h3>
+            </div>
+            <div class="card" onclick="openModal('Gloria\'s Fantasyland', 'The biggest theme park in Mindanao.', 'images (4).jpg')">
+                <img src="images (4).jpg"><h3>Gloria's Fantasyland</h3>
+            </div>
+            <div class="card" onclick="openModal('JRMSU Campus', 'Jose Rizal Memorial State University main campus.', 'images (11).jpg')">
+                <img src="images (11).jpg"><h3>JRMSU Campus</h3>
+            </div>
+            <div class="card" onclick="openModal('Museo ni Jose Rizal', 'Museum dedicated to Rizal\'s life in exile.', 'images (80).jpg')">
+                <img src="images (80).jpg"><h3>Museo ni Jose Rizal</h3>
+            </div>
+            <div class="card" onclick="openModal('Memorial Hospital', 'The primary health facility of the city.', 'images (81).jpg')">
+                <img src="images (81).jpg"><h3>Memorial Hospital</h3>
+            </div>
+            <div class="card" onclick="openModal('Punto del Desembarco', 'The landing site of Rizal in 1892.', 'images (110).jpg')">
+                <img src="images (110).jpg"><h3>Punto del Desembarco</h3>
+            </div>
+            <div class="card" onclick="openModal('Rizal Landing Site', 'Statues depicting Rizal\'s historic arrival.', 'images.jpg')">
+                <img src="images.jpg"><h3>Rizal Landing Site</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login / Worker Portal Section -->
+    <section id="login" class="login-section-msu">
+        <div class="login-card">
+            <!-- Form View -->
+            <div id="login-box">
+                <h3>Dapitan City Portal Login</h3>
+                <form id="loginForm">
+                    <label>Email Address</label>
+                    <input type="email" id="userEmail" placeholder="turtle@gmail.com" required>
+                    <label>Password</label>
+                    <input type="password" id="userPass" placeholder="cat12345" required>
+                    <button type="submit" class="portal-btn">Sign In to Portal</button>
+                </form>
+            </div>
+
+            <!-- Worker Dashboard View (Hidden until login) -->
+            <div id="dashboard-box" style="display: none;">
+                <h3 style="color: #800000; margin-bottom: 20px;">Employee Dashboard</h3>
+                <div class="worker-profile">
+                    <p><strong>Name:</strong> Juan Dela Cruz</p>
+                    <p><strong>Employee ID:</strong> 2026-0042</p>
+                    <p><strong>Position:</strong> Tourism Officer I</p>
+                    <p><strong>Department:</strong> City Tourism Office</p>
+                    <p><strong>Status:</strong> Active / Regular</p>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="action-btn">View Payroll</button>
+                    <button class="action-btn">Daily Time Record</button>
+                    <button onclick="location.reload()" class="logout-btn">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="descModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="">
+                <h2 id="modalTitle"></h2>
+                <hr>
+                <p id="modalText"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 City Government of Dapitan. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
